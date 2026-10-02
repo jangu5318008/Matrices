@@ -1,0 +1,88 @@
+#include 'Matrices.h'
+
+using namespace std;
+
+namespace Matrices {
+
+            ///Construct a matrix of the specified size.
+            ///Initialize each element to 0.
+            Matrix::Matrix(int _rows, int _cols) {
+                rows = _rows;
+                cols = _cols; 
+                a.resize(rows); 
+                for (int i = 0; i < rows; i++) {
+                   //(newSize, desiredValue) 
+                   a[i].resize(cols, 0.0);
+                    
+                }
+ 
+            }
+
+            ///************************************
+            ///inline accessors / mutators, these are done:
+
+            ///Read element at row i, column j
+            ///usage:  double x = a(i,j);
+            const double& Matrix::operator()(int i, int j) const {
+                return a.at(i).at(j);
+            }
+
+            ///Assign element at row i, column j
+            ///usage:  a(i,j) = x;
+            double& Matrix::operator()(int i, int j) {
+                //return a[i][j];
+                return a.at(i).at(j);
+            }
+
+
+            int Matrix::getRows() const {
+                return rows;
+            }
+
+            int Matrix::getCols() const{
+                return cols;
+            }
+            ///************************************
+
+
+
+
+
+
+    ///Add each corresponding element.
+    ///usage:  c = a + b;
+    Matrix operator+(const Matrix& a, const Matrix& b) {
+       //////FIXME///////
+        
+    }
+
+    ///Matrix multiply.  See description.
+    ///usage:  c = a * b;
+    Matrix operator*(const Matrix& a, const Matrix& b) {
+
+    }
+
+    ///Matrix comparison.  See description.
+    ///usage:  a == b
+    bool operator==(const Matrix& a, const Matrix& b) {
+
+    }
+
+    ///Matrix comparison.  See description.
+    ///usage:  a != b
+    bool operator!=(const Matrix& a, const Matrix& b) {
+
+    }
+
+    ///Output matrix.
+    ///Separate columns by ' ' and rows by '\n'
+    ostream& operator<<(ostream& os, const Matrix& a) {
+
+    }
+
+    void Matrix::print(Matrix print) {
+
+    }
+
+
+}
