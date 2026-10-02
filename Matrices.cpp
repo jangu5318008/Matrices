@@ -52,9 +52,22 @@ namespace Matrices {
     ///Add each corresponding element.
     ///usage:  c = a + b;
     Matrix operator+(const Matrix& a, const Matrix& b) {
-       //////FIXME///////
-        
-    }
+       //////GIGA FIXME///////
+        Matrix c(a.getRows(), a.getCols());
+
+            if (a.getRows() != b.getRows() || a.getCols() != b.getCols()) { 
+                throw runtime_error("Error: dimensions must agree");
+            }
+            for (int i = 0; i < a.getRows(); i++) {
+                for (int j = 0; j < a.getCols(); j++) {
+                    c(i, j) = a(i, j) + b(i, j);
+
+                }
+
+            }
+            return c;
+       } 
+
 
     ///Matrix multiply.  See description.
     ///usage:  c = a * b;
@@ -83,6 +96,5 @@ namespace Matrices {
     void Matrix::print(Matrix print) {
 
     }
-
 
 }
