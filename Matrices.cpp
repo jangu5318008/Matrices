@@ -54,7 +54,6 @@ namespace Matrices {
     Matrix operator+(const Matrix& a, const Matrix& b) {
        //////GIGA FIXME///////
         Matrix c(a.getRows(), a.getCols());
-
             if (a.getRows() != b.getRows() || a.getCols() != b.getCols()) { 
                 throw runtime_error("Error: dimensions must agree");
             }
@@ -63,7 +62,6 @@ namespace Matrices {
                     c(i, j) = a(i, j) + b(i, j);
 
                 }
-
             }
             return c;
        } 
@@ -78,8 +76,22 @@ namespace Matrices {
     ///Matrix comparison.  See description.
     ///usage:  a == b
     bool operator==(const Matrix& a, const Matrix& b) {
+        if (a.getRows() != b.getRows() || a.getCols() != b.getCols()) {
+            return false;
+        }
+            for (int i = 0; i < a.getRows(); i++) {
+                for (int j = 0; j < a.getCols(); j++) {
+                    double c;
+                    c = a(i, j) - b(i, j);  
+                    if (abs(c) >= 0.001) {
+                        return false;
 
-    }
+                    }
+                }
+            }
+            return true;
+        }
+
 
     ///Matrix comparison.  See description.
     ///usage:  a != b
