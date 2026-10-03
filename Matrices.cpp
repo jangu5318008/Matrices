@@ -103,13 +103,14 @@ namespace Matrices {
     ///Output matrix.
     ///Separate columns by ' ' and rows by '\n'
     ostream& operator<<(ostream& os, const Matrix& a) {
-        for () {
-            for () {
-
+        for (int i = 0; i < a.getRows(); i++) {
+            for (int j = 0; j < a.getCols(); j++) {
+               os << a(i, j) << " ";
 
             }
-
+            os << '\n';
         }
+        return os; 
     }
 
     void Matrix::print(Matrix print) {
