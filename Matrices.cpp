@@ -81,11 +81,11 @@ namespace Matrices {
         }
             for (int i = 0; i < a.getRows(); i++) {
                 for (int j = 0; j < a.getCols(); j++) {
-                    double c;
-                    c = a(i, j) - b(i, j);  
-                    if (abs(c) >= 0.001) {
+                    if (abs(a(i,j) - b(i,j)) < 0.001) {
+                        continue;
+                    }
+                    else {
                         return false;
-
                     }
                 }
             }
@@ -96,13 +96,20 @@ namespace Matrices {
     ///Matrix comparison.  See description.
     ///usage:  a != b
     bool operator!=(const Matrix& a, const Matrix& b) {
-
+        ////uses new == to compare/////
+        return !(a == b); 
     }
 
     ///Output matrix.
     ///Separate columns by ' ' and rows by '\n'
     ostream& operator<<(ostream& os, const Matrix& a) {
+        for () {
+            for () {
 
+
+            }
+
+        }
     }
 
     void Matrix::print(Matrix print) {
