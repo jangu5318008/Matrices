@@ -1,4 +1,4 @@
-#include 'Matrices.h'
+#include "Matrices.h"
 
 using namespace std;
 
@@ -71,6 +71,40 @@ namespace Matrices {
     ///usage:  c = a * b;
     Matrix operator*(const Matrix& a, const Matrix& b) {
 
+        
+            if (a.getCols() != b.getRows()) {
+                throw runtime_error("Error: dimensions must agree");
+
+            }
+
+            Matrix c(a.getRows(), b.getCols());
+            
+
+//////Let the outermost loop control k, the column index for b///
+        for (int k = 0; k < b.getCols(); k++) {
+
+///////Let the loop inside of that control i, the row for a////
+            for (int i = 0; i < a.getRows(); i ++) {
+                double product = 0.0;
+
+
+///////The innermost loop will control j, 
+////which will determine which column to use from a and which row to use from b. 
+                for (int j = 0; j < a.getCols(); j++) {
+                    product += ((a(i, j) * (b(j, k))));                        
+
+
+                }
+                c(i, k) = product;
+            }
+
+
+        }
+
+
+
+        return c;
+
     }
 
     ///Matrix comparison.  See description.
@@ -102,6 +136,7 @@ namespace Matrices {
 
     ///Output matrix.
     ///Separate columns by ' ' and rows by '\n'
+
     ostream& operator<<(ostream& os, const Matrix& a) {
         for (int i = 0; i < a.getRows(); i++) {
             for (int j = 0; j < a.getCols(); j++) {
