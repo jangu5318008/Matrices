@@ -23,13 +23,12 @@ namespace Matrices {
 
             ///Read element at row i, column j
             ///usage:  double x = a(i,j);
-            const double& Matrix::operator()(int i, int j) const {
+/*          const double& Matrix::operator()(int i, int j) const {
                 return a.at(i).at(j);
             }
-
+                
             ///Assign element at row i, column j
-            ///usage:  a(i,j) = x;
-            double& Matrix::operator()(int i, int j) {
+            ///usage:  a(i,j) = x;         double& Matrix::operator()(int i, int j) {
                 //return a[i][j];
                 return a.at(i).at(j);
             }
@@ -43,7 +42,7 @@ namespace Matrices {
                 return cols;
             }
             ///************************************
-
+*/
 
 
 
