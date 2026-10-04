@@ -41,7 +41,7 @@ namespace Matrices {
             int Matrix::getCols() const{
                 return cols;
             }
-            ///************************************
+            
 */
 
 
@@ -139,16 +139,16 @@ namespace Matrices {
     ostream& operator<<(ostream& os, const Matrix& a) {
         for (int i = 0; i < a.getRows(); i++) {
             for (int j = 0; j < a.getCols(); j++) {
-               os << a(i, j) << " ";
-
+               //os << a(i, j) << " ";
+               os << a(i, j) << setw(10);
             }
-            os << '\n';
+            os << '\n' << setw(10);
         }
         return os; 
     }
-
+/*
     void Matrix::print(Matrix print) {
 
     }
-
+*/
 }
